@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="search.js" defer></script>
+    <title>Search</title>
+</head>
+<body>
+    <main>
+        <section>
+            <center>
+                <div class="search-bar">
+                    <input type="text" id="zoektekst" placeholder="Zoek contacten"
+                    onkeyup="zoekContacten(document.getElementById('zoektekst').value)">
+                </div>
+
+                <div id="grid">  
+                </div>
+            </center>
+        </section>
+    </main>
+</body>
+</html>
