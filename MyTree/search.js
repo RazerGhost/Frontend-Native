@@ -1,31 +1,35 @@
-let landen = [];
-landen.push({
-    "land": "Nederland",
-    "hoofdstad": "Amsterdam"
-})
-landen.push({
-    "land": "indonesië",
-    "hoofdstad": "Jakarta"
-})
-landen.push({
-    "land": "Amerika",
-    "hoofdstad": "Washington D.C"
-})
-landen.push({
-    "land": "Verenigd Koninkrijk",
-    "hoofdstad": "London"
-})
+// projecten
+let projecten = [];
+projecten[0] = {
+  "project": "Duurzame landbouw",
+  "land": "Bangladesh"
+}
+projecten[1] = {
+  "project": "Red de regenwouden",
+  "land": "Benin Republiek"
+}
+projecten[2] = {
+  "project": "Red de regenwouden",
+  "land": "Mali"
+}
+projecten[3] = {
+  "project": "Voedselbossen",
+  "land": "Colombia"
+}
+projecten[4] = {
+  "project": "Voedselbossen",
+  "land": "Mali"
+}
 
-function zoeklanden(zoektekst){
-    zoektekst = zoektekst.toUpperCase();
-    let myGrid = "<div class='cell'><b>land</b></div> <div class'cell'><b>hoofdstad</b></div>";
+function selecteerProjecten(zoektekst) {
+  zoektekst = zoektekst.toUpperCase();
+  let toonProjecten = "<div class='cell'><b>Project</b></div><div class='cell'><b>Land</b></div>";
 
-    for (let x = 0; x < landen.length; x++) {
-        if (landen[x].land.toUpperCase().includes(zoektekst)) {
-            myGrid += '<div class="cell">' + landen[x].land + '</div>';
-            myGrid += '<div class="cell">' + landen[x].hoofdstad + '</div>';
-        
-        }
+  for (x = 0; x < projecten.length; x++) {
+    if (projecten[x].project.toUpperCase().includes(zoektekst) || projecten[x].land.toUpperCase().includes(zoektekst)) {
+      toonProjecten = toonProjecten + '<div class="cell">' + projecten[x].project + '</div>';
+      toonProjecten = toonProjecten + '<div class="cell">' + projecten[x].land + '</div>';
     }
-    document.getElementById('grid').innerHTML = myGrid;
+  }
+  document.getElementById('grid').innerHTML = toonProjecten;
 }
